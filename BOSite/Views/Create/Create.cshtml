@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model BODB.Complaints
+
+<h1>Ekle</h1>
+
+@Html.BeginForm()
+{
+    İsim (Gerekli Değil) :
+@Html.TextBoxFor(c => c.Name)
+İsim (Gerekli Değil) :
+@Html.TextBoxFor(c => c.Name)
+    Sitem :
+@Html.TextAreaFor(c => c.Description)
+
+<input type="submit" value="Ekle" />
+}

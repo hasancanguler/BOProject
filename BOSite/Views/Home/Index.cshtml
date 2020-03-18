@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Complaints>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        @foreach (var item in Model)
+        {
+            @Html.DisplayFor(m => item.Name)
+            <span>-</span>
+            @Html.DisplayFor(m => item.CreatedDate)
+            <br />
+            @Html.DisplayFor(m => item.Description)
+            <hr />
+        }
+    </div>

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model BODB.Complaints
+
+<h1>Ekle</h1>
+
+@using (Html.BeginForm(Model))
+{
+    <div class="form-group" style="max-width:500px;">
+        <label for="exampleInputEmail1">İsim</label>
+        <input type="text" class="form-control" name="Name" id="Name" aria-describedby="emailHelp" placeholder="İsim ya da nick">
+        <small id="emailHelp" class="form-text text-muted">Gerekli değil, nick de olur</small>
+    </div>
+    <div class="form-group" style="max-width:500px;">
+        <label for="exampleInputEmail1">Kim beter olsun ?</label>
+        <input type="text" class="form-control" name="CompanyName" id="CompanyName" aria-describedby="emailHelp" placeholder="kim, kimler ?">
+        <small id="emailHelp" class="form-text text-muted">Beter olmasını istediğiniz kişi ya da herhangi birşey için tanımlama yapabilirsiniz</small>
+    </div>
+    <div class="form-group" style="max-width:500px;">
+        <label for="exampleInputPassword1">Sitem</label>
+        <textarea type="text" rows="10" class="form-control" name="Description" id="Description" placeholder="İçinizi dökebilirsiniz"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+
