@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using BOBuss;
+using BOSite.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -20,9 +22,9 @@ namespace BOSite.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task <ActionResult> Index(BOBuss.ComplaintsModel complaint)
+        public async Task <ActionResult> Index(BOBuss.Models.Complaints complaint)
         {
-            BOBuss.Complaints complaintsBuss = new BOBuss.Complaints();
+            Complaints complaintsBuss = new Complaints();
             await complaintsBuss.Create(complaint);
             return View();
         }

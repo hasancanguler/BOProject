@@ -5,11 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Net.Http;
-using Newtonsoft.Json;
-using BOSite.Models;
+using BOSiteTest.Models;
 
-namespace BOSite.Controllers
+namespace BOSiteTest.Controllers
 {
     public class HomeController : Controller
     {
@@ -20,10 +18,9 @@ namespace BOSite.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            BOBuss.Complaints complaints = new BOBuss.Complaints();
-            return View(await complaints.List());
+            return View();
         }
 
         public IActionResult Privacy()
@@ -34,8 +31,7 @@ namespace BOSite.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            //return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-            return View();
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

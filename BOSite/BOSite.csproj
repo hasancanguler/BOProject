@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BOBuss\BOBuss.csproj" />
-    <ProjectReference Include="..\BODB\BODB.csproj" />
   </ItemGroup>
 
 

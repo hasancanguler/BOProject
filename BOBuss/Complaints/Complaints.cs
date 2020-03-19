@@ -12,7 +12,7 @@ namespace BOBuss
     public class Complaints
     {
         Company company = new Company();
-        public async Task Create(ComplaintsModel complaints)
+        public async Task Create(Models.Complaints complaints)
         {
             //Buraya Company araması eklenecek
             CompanyBaseModel companyModel = new CompanyBaseModel();
@@ -21,28 +21,28 @@ namespace BOBuss
             
             companyModel.Id = await company.Create(companyModel);
 
-            ComplaintsBaseModel complaintsBaseModel = new ComplaintsBaseModel();
-            complaintsBaseModel.Name = complaints.Name;
-            complaintsBaseModel.Description = complaints.Description;
-            complaintsBaseModel.CompanyId = companyModel.Id;
-            complaintsBaseModel.Publish = true;
-            complaintsBaseModel.CreatedDate = DateTime.Now;
+            Models.Complaints complaintsItem = new Models.Complaints();
+            complaintsItem.Name = complaints.Name;
+            complaintsItem.Description = complaints.Description;
+            complaintsItem.CompanyId = companyModel.Id;
+            complaintsItem.Publish = true;
+            complaintsItem.CreatedDate = DateTime.Now;
 
             using (var client = new HttpClient())
             {
-                var data = JsonConvert.SerializeObject(complaintsBaseModel);
+                var data = JsonConvert.SerializeObject(complaintsItem);
                 HttpContent content = new StringContent(data, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync("http://localhost:50549/api/Complaints", content);
             }
         }
 
-        public async Task<List<BODB.Complaints>> List()
+        public async Task<List<Models.Complaints>> List()
         {
             using (var client = new HttpClient())
             {
                 var response = await client.GetAsync("http://localhost:50549/api/Complaints");
-                List<BODB.Complaints> complaintmodel = JsonConvert.DeserializeObject<List<BODB.Complaints>>(response.Content.ReadAsStringAsync().Result);
-                return complaintmodel;
+                List<Models.Complaints> complaintsItem = JsonConvert.DeserializeObject<List<Models.Complaints>>(response.Content.ReadAsStringAsync().Result);
+                return complaintsItem;
             }
         }
     }

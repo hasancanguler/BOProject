@@ -24,13 +24,6 @@ namespace BOApi.Controllers
             } 
         }
 
-        // GET: api/Complaints/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST: api/Complaints
         [HttpPost]
         public Response Post([FromBody] Complaints complaints)

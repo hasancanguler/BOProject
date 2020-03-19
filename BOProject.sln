@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BOApi", "BOApi\BOApi.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BOSite", "BOSite\BOSite.csproj", "{48AD55E4-8FB3-4DEB-A94E-7B3696C5792C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOBuss", "BOBuss\BOBuss.csproj", "{58473EE3-F122-415D-9E9D-0BC353424BF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BOBuss", "BOBuss\BOBuss.csproj", "{58473EE3-F122-415D-9E9D-0BC353424BF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

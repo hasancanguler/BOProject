@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model IEnumerable<Complaints>
+@model IEnumerable<BOBuss.Models.Complaints>
 
     <div class="text-center">
         <h1 class="display-4">Welcome</h1>
@@ -12,7 +12,8 @@
             <span>-</span>
             @Html.DisplayFor(m => item.CreatedDate)
             <br />
-            @Html.DisplayFor(m => item.Description)
+            
+            @item.Description
             <hr />
         }
     </div>
